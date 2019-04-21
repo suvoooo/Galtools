@@ -153,11 +153,13 @@ Healpix-2.20.a seems to work perfectly with this version of galprop(54.1.984). C
 	b. binary and build directory should be made
 	c. inside build directory: cmake -DCMAKE_INSTALL_PREFIX=/home/suvo/galprop-56.1/binary/galtoolslib /home/suvo/galprop-56.1/galtoolslib-1.0.855-Source
 	d. CMAKE may end up with error. Go to build directory and inside the CMakeCache.txt file give proper paths to dependencies
-	d. make 
-	e. make ends with error. Somehow the files inside xerces include library, does not have the correct path, but I wrote some codes which will automatically set up the path inside all files. Otherwise you can do it manually which is boring and super time consiuming.  
-	f. Last dependency should be xerces and then once the library path and installation directory are properly given, cmake and finally make ends with success
-	g. if you find error for no rule to make target then check CMakeCache.txt file for whether the paths for the installation or the library directory are correct. 
-	h. after make install you can find the include lib share directories inside the binary folder.  
+		d.1. Make sure gsl is used from binarygsl folder. for the gsl config path, give the complete path to gsl-cofig file in (//Path to a program.
+		     GSL_CONFIG:FILEPATH)
+	e. make 
+	f. make ends with error. Somehow the files inside xerces include library, does not have the correct path, but I wrote some codes which will automatically set up the path inside all files. Otherwise you can do it manually which is boring and super time consiuming.  
+	g. Last dependency should be xerces and then once the library path and installation directory are properly given, cmake and finally make ends with success
+	h. if you find error for no rule to make target then check CMakeCache.txt file for whether the paths for the installation or the library directory are correct. 
+	i. after make install you can find the include lib share directories inside the binary folder.  
 
 
 
@@ -194,17 +196,5 @@ Healpix-2.20.a seems to work perfectly with this version of galprop(54.1.984). C
 
 
  
-
-
-
-
-
-
-
-
-
-
-
-
 
 
